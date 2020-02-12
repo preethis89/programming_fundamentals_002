@@ -24,22 +24,50 @@ const catalogue = [
 
 function countBooks() {
   // Your code here
+  return catalogue.length;
 }
 
 function checkBook(book) {
   // Your code here
+  for(i=0;i<catalogue.length;i++){
+    if(catalogue[i]=== book)
+    return true;
+   
+    
+  }
+  return false;
 }
 
 function countBooksByFirstLetter(letter) {
   // Your code here
+  var results = 0;
+  for(i=0;i<catalogue.length;i++){
+    if(catalogue[i][0]===letter)
+    results++;
+  }
+  return results;
 }
 
 function countBooksByKeyword(keyword) {
   // Your code here
+  var count=0;
+  for(i=0;i<catalogue.length;i++){
+    let kword = catalogue[i];
+    if(kword.toLowerCase().includes(keyword.toLowerCase()))
+    count++;
+  }
+  return count;
 }
 
 function getBooksByAuthor(author) {
   // Your code here
+   let books = [];
+  for(i=0;i<catalogue.length;i++){
+    let xauthor = catalogue[i];
+    if(xauthor.toLowerCase().includes(author.toLowerCase()))
+    books.push(catalogue[i]);
+  }
+  return books;
 }
 
 module.exports = {
